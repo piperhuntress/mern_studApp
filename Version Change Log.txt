@@ -1,0 +1,7 @@
+3-12-2023
+
+1. Used try..catch along with async and await instead of .then...catch() for asynchronous functions in client and server.
+Using try-catch with async/await can make your code look more synchronous and can often lead to cleaner error handling, especially when dealing with asynchronous operations.
+2. Added confirm dialog box before deleting.
+3. Change findByIdAndRemove(deprecated) change to findOneAndDelete().
+4. Added conditional in student registration to add simple validation for empty fields.

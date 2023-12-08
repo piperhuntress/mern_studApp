@@ -1,0 +1,27 @@
+.register-form{
+  width: 400px;
+}
+.listStudents{
+  width: 800px;
+}
+.searchtxt{
+  width:400px;
+  margin-right: 10px;
+  border: 2px solid rgb(38, 142, 177);
+  border-radius: 4px;
+}
+.footer{
+  padding: 20px;
+  background-color:rgb(211, 227, 227);
+}
+.header{
+  padding: 10px;
+  background-color:rgb(211, 227, 227);
+}
+.content{
+  min-height: 500px;
+  width: 100%;
+}
+.bannerImg{
+  width: 100%;
+}
