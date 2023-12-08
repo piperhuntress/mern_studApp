@@ -27,16 +27,12 @@ const StudentRegister = () => {
           password: password,
           dept: dept,
         });
-
         // Handle successful response
-        //alert("It worked");
-
         setresponseMsg(response.data.msg);
         console.log(response);
       }
     } catch (err) {
       // Handle errors
-      //alert("Did not work");
       console.error(err);
     }
   };

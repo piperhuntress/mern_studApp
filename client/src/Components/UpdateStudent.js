@@ -17,27 +17,22 @@ const UpdateStudent = (props) => {
   const departments = ["IT", "Engineering", "Business", "Foundation"];
 
   let { Sid } = useParams();
-  //console.log(Sid);
 
-  const updateStudent = () => {
-    Axios.put(`http://localhost:3001/update/${Sid}`, {
-      studId: studId,
-      studName: studName,
-      email: email,
-      password: password,
-      dept: dept,
-    })
-      .then((res) => {
-        //alert("It worked");
-        setresponseMsg(res.data.msg);
-
-        //console.log(responseMsg);
-      })
-      .catch((err) => {
-        //alert("Did not worked");
-        console.log(err);
+  const updateStudent = async () => {
+    try {
+      const response = await Axios.put(`http://localhost:3001/update/${Sid}`, {
+        studId: studId,
+        studName: studName,
+        email: email,
+        password: password,
+        dept: dept,
       });
+      setresponseMsg(response.data.msg);
+    } catch (err) {
+      console.log(err);
+    }
   };
+
   useEffect(() => {
     Axios.get(`http://localhost:3001/getStudent/${Sid}`)
       .then((response) => {
