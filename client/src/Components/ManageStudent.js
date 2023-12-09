@@ -7,7 +7,7 @@ const ManageStudents = () => {
   const [countRecords, setcountRecords] = useState(0);
   const [searchKey, setsearchKey] = useState("");
 
-  const URL = process.env.REACT_APP_URL;
+  const URL = "https://studapp.onrender.com";
 
   const deleteStudent = async (id) => {
     try {

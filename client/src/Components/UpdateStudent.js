@@ -17,6 +17,7 @@ const UpdateStudent = (props) => {
   const departments = ["IT", "Engineering", "Business", "Foundation"];
 
   let { Sid } = useParams();
+  const URL = "https://studapp.onrender.com";
 
   const updateStudent = async () => {
     try {
@@ -48,7 +49,6 @@ const UpdateStudent = (props) => {
       });
   }, []);
   const updateDept = (e) => {
-    //console.log(dept);
     setdept(e.target.value);
   };
 
