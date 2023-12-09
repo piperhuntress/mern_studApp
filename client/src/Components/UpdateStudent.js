@@ -20,7 +20,7 @@ const UpdateStudent = (props) => {
 
   const updateStudent = async () => {
     try {
-      const response = await Axios.put(`http://localhost:3001/update/${Sid}`, {
+      const response = await Axios.put(`${URL}/update/${Sid}`, {
         studId: studId,
         studName: studName,
         email: email,
@@ -34,7 +34,7 @@ const UpdateStudent = (props) => {
   };
 
   useEffect(() => {
-    Axios.get(`http://localhost:3001/getStudent/${Sid}`)
+    Axios.get(`${URL}/getStudent/${Sid}`)
       .then((response) => {
         console.log(response);
         setstudId(response.data.result.studId);

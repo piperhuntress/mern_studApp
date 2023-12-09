@@ -7,13 +7,13 @@ const ManageStudents = () => {
   const [countRecords, setcountRecords] = useState(0);
   const [searchKey, setsearchKey] = useState("");
 
+  const URL = process.env.REACT_APP_URL;
+
   const deleteStudent = async (id) => {
     try {
       const confirmDelete = window.confirm("Do you really want to delete?");
       if (confirmDelete) {
-        const response = await Axios.delete(
-          `http://localhost:3001/delete/${id}`
-        );
+        const response = await Axios.delete(`${URL}/delete/${id}`);
         setlistOfStudents(
           listOfStudents.filter((val) => {
             return val._id != id;
@@ -33,9 +33,7 @@ const ManageStudents = () => {
     setsearchKey(e.target.value);
     //console.log(searchKey);
     try {
-      const response = await Axios.get(
-        `http://localhost:3001/search/${searchKey}`
-      );
+      const response = await Axios.get(`${URL}/search/${searchKey}`);
       setlistOfStudents(response.data.result);
       setcountRecords(response.data.count);
       //console.log(response.data.count);
@@ -45,7 +43,7 @@ const ManageStudents = () => {
   };
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/manage")
+    Axios.get("${URL}/manage")
       .then((response) => {
         setlistOfStudents(response.data.result);
         setcountRecords(response.data.count);

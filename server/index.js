@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import StudentModel from "./Models/Student.js";
 import cors from "cors";
+import dotenv from "dotenv";
 
 const app = express();
 
@@ -9,9 +10,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-//Database connection
-const connectString =
-  "mongodb+srv://admin:admin12345@clusterstudapp.w5mibfb.mongodb.net/studentDb?retryWrites=true&w=majority";
+dotenv.config(); //retrieve the configutation from the  .env file
+const PORT = process.env.PORT;
+const db_username = process.env.DB_USER;
+const db_password = process.env.DB_PASSWORD;
+const db_name = process.env.DB_NAME;
+const db_cluster = process.env.DB_CLUSTER;
+
+// connection string
+const connectString = `mongodb+srv://${db_username}:${db_password}@${db_cluster}/${db_name}?retryWrites=true&w=majority`;
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
