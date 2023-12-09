@@ -165,6 +165,11 @@ app.put("/update/:id", async (req, res) => {
   }
 });
 
+app.get("/test", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.send("CORS test successful");
+});
+
 app.listen(process.env.PORT || 3001, () => {
   console.log("You are connected");
 });
