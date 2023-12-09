@@ -8,8 +8,8 @@ const app = express();
 
 //Middleware
 const corsOptions = {
-  origin: "http://localhost:3000", //client URL local
-  //origin: "https://studapp.onrender.com",
+  //origin: "http://localhost:3000", //client URL local
+  origin: "https://studapp.onrender.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Enable credentials (cookies, authorization headers, etc.)
 };
