@@ -8,7 +8,8 @@ const app = express();
 
 //Middleware
 const corsOptions = {
-  origin: "https://studapp.onrender.com",
+  origin: "http://localhost:3000", //client URL local
+  //origin: "https://studapp.onrender.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Enable credentials (cookies, authorization headers, etc.)
 };
@@ -23,7 +24,10 @@ const db_name = process.env.DB_NAME;
 const db_cluster = process.env.DB_CLUSTER;
 
 // connection string
-const connectString = `mongodb+srv://${db_username}:${db_password}@${db_cluster}/${db_name}?retryWrites=true&w=majority`;
+//const connectString = `mongodb+srv://${db_username}:${db_password}@${db_cluster}/${db_name}?retryWrites=true&w=majority`;
+const connectString =
+  "mongodb+srv://jasminetumulak:admin12345@cluster0.lvic91v.mongodb.net/postITDb?retryWrites=true&w=majority";
+
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
