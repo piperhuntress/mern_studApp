@@ -21,7 +21,7 @@ const StudentRegister = () => {
       if (!studId || !studName || !email || !password || !dept) {
         alert("All fields are required.");
       } else {
-        const response = await Axios.post("${URL}/addStudent", {
+        const response = await Axios.post(`${URL}/addStudent`, {
           studId: studId,
           studName: studName,
           email: email,

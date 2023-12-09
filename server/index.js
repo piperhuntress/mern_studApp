@@ -7,21 +7,21 @@ import dotenv from "dotenv";
 const app = express();
 
 //Middleware
-/* const corsOptions = {
+const corsOptions = {
   //origin: "http://localhost:3000", //client URL local
-  //origin: "https://studapp.onrender.com",
-  origin: "*",
+  origin: "https://studapp.onrender.com",
+  //origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Enable credentials (cookies, authorization headers, etc.)
-}; */
+};
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://studapp.onrender.com"); // Replace '*' with the actual origin of your frontend application
+/* app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*"); // Replace '*' with the actual origin of your frontend application
   res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
   res.header("Access-Control-Allow-Credentials", true);
   next();
-});
-//app.use(cors(corsOptions));
+}); */
+app.use(cors(corsOptions));
 app.use(express.json());
 
 dotenv.config(); //retrieve the configuration from the  .env file
