@@ -8,7 +8,7 @@ const app = express();
 
 //Middleware
 const corsOptions = {
-  origin: "https://studapp.onrender.com", //client URL
+  origin: "https://studapp.onrender.com",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Enable credentials (cookies, authorization headers, etc.)
 };
@@ -27,6 +27,7 @@ const connectString = `mongodb+srv://${db_username}:${db_password}@${db_cluster}
 mongoose.connect(connectString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  tls: true,
 });
 /********************************************************/
 //express POST route for adding new student
