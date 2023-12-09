@@ -7,6 +7,11 @@ import dotenv from "dotenv";
 const app = express();
 
 //Middleware
+const corsOptions = {
+  origin: "https://mern-studapp.onrender.com",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, // Enable credentials (cookies, authorization headers, etc.)
+};
 app.use(cors());
 app.use(express.json());
 
