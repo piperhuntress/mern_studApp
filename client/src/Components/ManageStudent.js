@@ -43,7 +43,7 @@ const ManageStudents = () => {
   };
 
   useEffect(() => {
-    Axios.get("${URL}/manage")
+    Axios.get(`${URL}/manage`)
       .then((response) => {
         setlistOfStudents(response.data.result);
         setcountRecords(response.data.count);

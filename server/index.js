@@ -10,8 +10,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-dotenv.config(); //retrieve the configutation from the  .env file
-const PORT = process.env.PORT;
+dotenv.config(); //retrieve the configuration from the  .env file
+//const PORT = process.env.PORT;
 const db_username = process.env.DB_USER;
 const db_password = process.env.DB_PASSWORD;
 const db_name = process.env.DB_NAME;
@@ -147,6 +147,6 @@ app.put("/update/:id", async (req, res) => {
   }
 });
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
   console.log("You are connected");
 });
