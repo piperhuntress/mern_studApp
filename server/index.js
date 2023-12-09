@@ -34,7 +34,7 @@ const db_cluster = process.env.DB_CLUSTER;
 // connection string
 //const connectString = `mongodb+srv://${db_username}:${db_password}@${db_cluster}/${db_name}?retryWrites=true&w=majority`;
 const connectString =
-  "mongodb+srv://jasminetumulak:admin12345@cluster0.lvic91v.mongodb.net/postITDb?retryWrites=true&w=majority";
+  "mongodb+srv://admin:admin12345@clusterstudapp.w5mibfb.mongodb.net/studentDb?retryWrites=true&w=majority";
 
 mongoose.connect(connectString, {
   useNewUrlParser: true,
