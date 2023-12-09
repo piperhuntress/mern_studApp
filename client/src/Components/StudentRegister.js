@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import Axios from "axios";
 import { useState, useEffect } from "react";
+import { URL } from "../Config/config";
 
 const StudentRegister = () => {
   const [studId, setstudId] = useState("");

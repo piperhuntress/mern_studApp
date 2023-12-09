@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { URL } from "../Config/config";
 
 const UpdateStudent = (props) => {
   const [studId, setstudId] = useState("");
@@ -17,7 +18,6 @@ const UpdateStudent = (props) => {
   const departments = ["IT", "Engineering", "Business", "Foundation"];
 
   let { Sid } = useParams();
-  const URL = "https://studapp.onrender.com";
 
   const updateStudent = async () => {
     try {

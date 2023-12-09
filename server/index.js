@@ -8,11 +8,11 @@ const app = express();
 
 //Middleware
 const corsOptions = {
-  origin: "https://mern-studapp.onrender.com",
+  origin: "https://studapp.onrender.com", //client URL
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Enable credentials (cookies, authorization headers, etc.)
 };
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 dotenv.config(); //retrieve the configuration from the  .env file
