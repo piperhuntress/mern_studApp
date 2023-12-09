@@ -10,31 +10,22 @@ const app = express();
 const corsOptions = {
   //origin: "http://localhost:3000", //client URL local
   origin: "https://studapp.onrender.com",
-  //origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Enable credentials (cookies, authorization headers, etc.)
 };
 
-/* app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*"); // Replace '*' with the actual origin of your frontend application
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
-  res.header("Access-Control-Allow-Credentials", true);
-  next();
-}); */
 app.use(cors(corsOptions));
 app.use(express.json());
 
 dotenv.config(); //retrieve the configuration from the  .env file
 //const PORT = process.env.PORT;
-const db_username = process.env.DB_USER;
-const db_password = process.env.DB_PASSWORD;
-const db_name = process.env.DB_NAME;
-const db_cluster = process.env.DB_CLUSTER;
+const DB_USER = process.env.DB_USER;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+const DB_NAME = process.env.DB_NAME;
+const DB_CLUSTER = process.env.DB_CLUSTER;
 
 // connection string
-//const connectString = `mongodb+srv://${db_username}:${db_password}@${db_cluster}/${db_name}?retryWrites=true&w=majority`;
-const connectString =
-  "mongodb+srv://admin:admin12345@clusterstudapp.w5mibfb.mongodb.net/studentDb?retryWrites=true&w=majority";
+const connectString = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_CLUSTER}/${DB_NAME}?retryWrites=true&w=majority`;
 
 mongoose.connect(connectString, {
   useNewUrlParser: true,
